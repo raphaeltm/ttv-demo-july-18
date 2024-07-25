@@ -8,7 +8,7 @@ export function DisplayEquipmentList() {
   console.log(equipmentList);
   return (
     <div>
-      <List sx={{ width: "100%", maxWidth: 800 }}>
+      {/* <List sx={{ width: "100%", maxWidth: 800 }}>
         {equipmentList.map((equipment) => (
           <ListItem key={equipment.id} sx={{ width: "100%" }}>
             <Stack
@@ -22,7 +22,58 @@ export function DisplayEquipmentList() {
             </Stack>
           </ListItem>
         ))}
-      </List>
+      </List> */}
+      {/* Display as standard html table instead with border */}
+      <table
+        style={{
+          border: "1px solid black",
+          borderCollapse: "collapse",
+          width: "100%",
+        }}
+      >
+        <thead>
+          <tr>
+            <th
+              style={{
+                border: "1px solid black",
+                borderCollapse: "collapse",
+              }}
+            >
+              Name
+            </th>
+            <th
+              style={{
+                border: "1px solid black",
+                borderCollapse: "collapse",
+              }}
+            >
+              Type
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {equipmentList.map((equipment) => (
+            <tr key={equipment.id}>
+              <td
+                style={{
+                  border: "1px solid black",
+                  borderCollapse: "collapse",
+                }}
+              >
+                {equipment.name}
+              </td>
+              <td
+                style={{
+                  border: "1px solid black",
+                  borderCollapse: "collapse",
+                }}
+              >
+                {equipment.type}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
