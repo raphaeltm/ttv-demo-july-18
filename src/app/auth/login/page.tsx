@@ -6,6 +6,7 @@ import { Stack, Typography } from "@mui/material";
 import { type Metadata } from "next";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
+import { TOS } from "../components/tos/tos";
 
 export const metadata: Metadata = {
   title: "Sign In",
@@ -20,6 +21,7 @@ export default async function Login() {
 
   return (
     <Stack spacing={2}>
+      <TOS />
       <Typography variant="h2">Sign in to your account</Typography>
       <Typography>
         Don’t have an account?{" "}

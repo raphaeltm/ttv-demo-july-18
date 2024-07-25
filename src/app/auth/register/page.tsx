@@ -6,6 +6,7 @@ import { type Metadata } from "next";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { Stack, Typography } from "@mui/material";
+import { TOS } from "../components/tos/tos";
 
 export const metadata: Metadata = {
   title: "Sign Up",
@@ -20,6 +21,7 @@ export default async function Register() {
 
   return (
     <Stack spacing={2}>
+      <TOS />
       <Typography variant="h2">Get started for free</Typography>
       <Typography>
         Already registered? <Link href="/auth/login">Sign in</Link> to your
